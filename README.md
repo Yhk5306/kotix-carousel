@@ -82,3 +82,7 @@ This table lists the default values for each prop of the `KotixSection` componen
 | `controls`      | `false`       |
 | `autoPlay`      | `false`       |
 | `autoPlayDuration` | `3500`      |
+
+# Css customization 
+
+- **Customization**: Describes available CSS variables (`--ktx-progress-color`, `--ktx-btn`, `--carousel-control-bg`, `--ktx-progress-bg`) and how users can override them in their applications.
