@@ -1,0 +1,345 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    --main-body:#f5f5f7;
+    --nav-bg:rgba(251, 251, 253, .8);
+    --header-color: #1d1d1f;
+    --text-color:#333336;
+    --nav-color:rgba(0, 0, 0, .8);
+    --sub-nav-bg: #fbfbfd;
+    --sub-nav-header:#3A3B3C;
+    --sub-nav-color:#333336;
+    --r-globalnav-flyout-group-delay: min( (var(--r-globalnav-flyout-elevated-group-count) * 80ms) + ((var(--r-globalnav-flyout-group-number) - var(--r-globalnav-flyout-elevated-group-count)) * 40ms), var(--r-globalnav-flyout-group-number) * 80ms );
+    --r-globalnav-flyout-elevated-group-count: 1;
+    --r-globalnav-flyout-group-total: 2;
+    --r-globalnav-flyout-group-number: 0;
+    --r-globalnav-flyout-rate:333ms;
+    --toolbar-btn-bg:#eeeef4;
+    --toolbar-scrooled-bg:rgba(251,251,253,0.8);
+    --contact-form-bg:#00cccc;
+    --contact-btn-bg:#282e39;
+    --contact-btn-color:#00cccc;
+    --p-height: 457px;
+    --linear:linear-gradient(#055ee5, #c91279);
+    --catch-word-text:linear-gradient(0deg, var(--text-color) 50%,#FFFFFF 0);
+    --catch-word-bg:-webkit-linear-gradient(90deg,var(--sub-nav-bg), #858ea1);
+    --product-header: linear-gradient(0deg, var(--sub-nav-color) 50%,var(--sub-nav-bg) 0);
+    --banner-txt-bg: -webkit-linear-gradient(0deg, #939aab 20%, #968f8f 50%, #6e7d8d 80%);
+    --carousel-control-bg: #aab0be;
+    --loader-bg:linear-gradient(0.25turn, transparent, var(--sub-nav-bg), transparent),
+    linear-gradient(#c3c3cb,#c3c3cb),
+    radial-gradient(38px circle at 19px 19px, #c3c3cb 50%, transparent 51%),
+    linear-gradient(#c3c3cb, #c3c3cb);
+    --card-loader-bg: linear-gradient(110deg, #949faf 8%, #858EA1FF 18%, #858EA1FF 33%);
+}
+
+::marker{
+    display: none;
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+a:hover {
+    color: #535bf2;
+}
+
+
+
+.card {
+    padding: 2em;
+}
+
+#app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+    a:hover {
+        color: #747bff;
+    }
+    button {
+        background-color: #f9f9f9;
+    }
+}
+
+html{
+    overflow: hidden;
+}
+
+.carousel-section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+.carousel-arranger{
+    position: relative;
+}
+
+.carousel-item {
+    position: absolute;
+    border-radius: 20px;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    color: #fff;
+    font-size: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-button-list{
+    height: 48px;
+    background-color: var(--carousel-control-bg);
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.carousel-button-list .carousel-btn {
+    width: 20px;
+}
+
+.active-carousel-btn{
+    width: 40px !important;
+}
+.carousel-play-btn{
+    height: 48px;
+    background-color: var(--carousel-control-bg);
+    width: 48px;
+    border-radius: 50%;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    color: var(--sub-nav-color);
+    align-items: center;
+    cursor: pointer;
+}
+
+.start{
+    color: #a7a7a7;
+    margin-right: 5px;
+}
+.duration{
+    color: #a7a7a7;
+    margin-left: 5px;
+}
+.spoti-progress-bar{
+    height: 12px;
+    position: relative;
+    width: 100%;
+}
+.hidden-visually{
+    clip: rect(0 0 0 0);
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.progress-bar-line{
+    --progress-bar-transform: 0%;
+    --progress-bar-height: 4px;
+    --progress-bar-radius: calc(var(--progress-bar-height)/2);
+    height: 100%;
+    overflow: hidden;
+    -ms-touch-action: none;
+    touch-action: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.progress-bar-background{
+    background-color: var(--toolbar-btn-bg);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 12px;
+    width: 100%;
+    border-radius: 13px;
+}
+.progress-arranger{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+.progress-bg{
+    background-color: var(--text-color);
+    -webkit-transform: translateX(calc(-100% + var(--progress-bar-transform)));
+    transform: translateX(calc(-100% + var(--progress-bar-transform)));
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+}
+.progress-button{
+    background-color: var(--text-color);
+    border: 0;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+    display: none;
+    height: 12px;
+    left: var(--progress-bar-transform);
+    margin-left: -6px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 12px;
+    z-index: 100;
+    transition: 0.3s;
+}
+.playback-bar{
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+}
+.right-icons{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+.kotix-carousel{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.carousel-controls {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5rem;
+}
+.carousel-button-list{
+    width: 168px;
+    height: 48px;
+    background-color: var(--carousel-control-bg);
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.carousel-button-list .carousel-btn {
+    width: 20px;
+}
+
+.active-carousel-btn{
+    width: 40px !important;
+}
+.carousel-play-btn{
+    height: 48px;
+    background-color: var(--carousel-control-bg);
+    width: 48px;
+    border-radius: 50%;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    color: var(--sub-nav-color);
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.start{
+    color: #a7a7a7;
+    margin-right: 5px;
+}
+.duration{
+    color: #a7a7a7;
+    margin-left: 5px;
+}
+.spoti-progress-bar{
+    height: 12px;
+    position: relative;
+    width: 100%;
+}
+.hidden-visually{
+    clip: rect(0 0 0 0);
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.progress-bar-line{
+    --progress-bar-transform: 0%;
+    --progress-bar-height: 4px;
+    --progress-bar-radius: calc(var(--progress-bar-height)/2);
+    height: 100%;
+    overflow: hidden;
+    -ms-touch-action: none;
+    touch-action: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+.progress-arranger{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+.progress-bg{
+    background-color: gray;
+    -webkit-transform: translateX(calc(-100% + var(--progress-bar-transform)));
+    transform: translateX(calc(-100% + var(--progress-bar-transform)));
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+}
+
+.playback-bar{
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+}
