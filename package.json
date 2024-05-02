@@ -1,6 +1,6 @@
 {
   "name": "kotix-carousel-vue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "main": "dist/kotix-carousel.umd.js",
   "module": "dist/kotix-carousel.mjs",
@@ -14,6 +14,10 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yhk5306/kotix-carousel.git"
   },
   "dependencies": {
     "gsap": "^3.12.2",
