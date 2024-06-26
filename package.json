@@ -1,6 +1,6 @@
 {
   "name": "kotix-carousel-vue",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "private": false,
   "main": "dist/kotix-carousel.umd.js",
   "module": "dist/kotix-carousel.mjs",

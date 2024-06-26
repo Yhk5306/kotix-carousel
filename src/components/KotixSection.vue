@@ -94,7 +94,9 @@ export default defineComponent({
       itemRefs.value = sectionItem.value.children;
       items.value = sectionItem.value.children.length;
       goTo(props.startFrom)
-      observer();
+      if (props.draggable || props.scroll){
+        observer();
+      }
     });
 
 
