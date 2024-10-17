@@ -1,6 +1,6 @@
 {
   "name": "kotix-carousel-vue",
-  "version": "1.0.9",
+  "version": "1.1.7",
   "private": false,
   "main": "dist/kotix-carousel-vue.umd.js",
   "module": "dist/kotix-carousel-vue.mjs",
@@ -46,7 +46,7 @@
     "sass": "1.55.0",
     "sass-loader": "13.2.0",
     "typescript": "~4.7.4",
-    "vite": "^3.1.8",
+    "vite": "5.4.6",
     "vue-tsc": "^1.0.8"
   }
 }
