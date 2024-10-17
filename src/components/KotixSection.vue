@@ -193,21 +193,14 @@ export default defineComponent({
       observer = () => {
         observerInstance = Observer.create({
           wheelSpeed: -1,
-          tolerance: 20,
+          tolerance: 0,
           onLeft: () => !animating && goTo(currentIndex + 1, 'left'),
           onRight: () => !animating && goTo(currentIndex - 1, 'right'),
-          preventDefault: true,
+          preventDefault:ScrollTrigger.isTouch,         //added for mobile controls
           onPress: self => {
-            // Disable dragging by preventing default touch behavior
-            if (ScrollTrigger.isTouch) {
-              self.event.preventDefault();
-            }
-          },
-          onDragStart: () => {
-            // Disable dragging by preventing the drag start event
-            return false;
+            ScrollTrigger.isTouch && self.event.preventDefault();
           }
-        })
+        });
       }
     }
 

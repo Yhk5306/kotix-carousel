@@ -3,37 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="/site/logo/yamako-icon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/splash-screen.css">
-    <title>Yamako Systems</title>
+    <title>Kotix Carousel</title>
 </head>
 
-<body class="page-loading">
-    <!--begin::Theme mode setup on page load-->
-    <script>
-        let themeMode = "system";
-
-        if (localStorage.getItem("kt_theme_mode_value")) {
-            themeMode = localStorage.getItem("kt_theme_mode_value");
-        }
-
-        if (themeMode === "system") {
-            themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
-
-        document.documentElement.setAttribute("data-bs-theme", themeMode);
-    </script>
-    <!--end::Theme mode setup on page load-->
-
+<body>
     <div id="app"></div>
-
-    <div id="splash-screen" class="splash-screen">
-        <img src="/site/logo/logo-light.png" class="dark-logo" alt="yamakosystems dark logo" />
-        <img src="/site/logo/logo-dark.png" class="light-logo" alt="yamakosystems light logo" />
-        <span class="page-loader"></span>
-    </div>
     <script type="module" src="/src/main.ts"></script>
 </body>
 
